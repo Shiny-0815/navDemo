@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        键盘
+    </title>
+    </meta>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <div id="mainX"  class="main-wrapper">
+
+        </div>
+    </main>
+    <footer>
+    </footer>
+    <script>
+        var keys = {
+            '0': ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+            '1': ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
+            '2': ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
+            length: 3
+        }
+
+
+        var hash = {
+            'q': 'qq.com',
+            'w': 'weibo.com',
+            'e': 'ele.me',
+            'r': 'renren.com',
+            't': 'tianya.com',
+            'y': 'youtube.com',
+            'u': 'uc.com',
+            'i': 'iqiyi.com',
+            'o': 'opera.com',
+            'p': 'undefined',
+            'm': 'www.mcdonalds.com.cn'
+        }
+
+
+        index = 0
+        while (index < keys['length']) {
+            divX = document.createElement('div')
+            mainX.appendChild(divX)
+            row = keys[index]
+            index2 = 0
+            while (index2 < row.length){
+                kbdX = document.createElement('kbd')
+                kbdX.textContent = row[index2]
+                divX.appendChild(kbdX)
+                index2 = index2 +1
+            }
+                index = index + 1
+        }
+    </script>
+</body>
+
+</html>
