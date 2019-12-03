@@ -1,4 +1,16 @@
 *{margin: 0; padding: 0;}
+body{
+    background-position: center center;
+    background: grey url(./wall.jpg) no-repeat center center;
+    background-size: cover;
+}
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 main kbd{
     border: 1px solid red;  
     display: inline-block;
@@ -6,7 +18,28 @@ main kbd{
     height: 4em;
     vertical-align: top;
     position: relative;
+    text-transform: uppercase;
 }
+main .key{
+    width: 50px;
+    height: 40px;
+    border-radius: 5px;
+    color: #CFCFCF;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 8px;
+    border: none;
+    box-shadow: 0 0 0px 1px #2C2C2D,0 0 0px 2px #020202, 0 1px 0px 2px #020202;
+    background: linear-gradient(0deg, rgba(17,17,17,1) 0%, rgba(40,40,40,1) 100%, rgba(0,0,0,1) 282828%);  
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+}
+main .row{
+    margin: 20px 17px;
+}
+
 kbd > button{
     display: none;
     position: absolute;
@@ -22,12 +55,17 @@ main{
 }
 .main-wrapper{
     display: inline-block;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 7px;
 }
+/* .main-wrapper > div:nth-child(1){
+    margin-top: 17px;
+} */
 .main-wrapper > div:nth-child(2){
-    margin-left: 2em;
+    margin-left: -18px;
 }
 .main-wrapper > div:nth-child(3){
-    margin-left: 4em;
+    margin-left: -69px;
 }
 kbd > button{
     display: none;

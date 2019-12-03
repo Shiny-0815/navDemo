@@ -13,9 +13,11 @@
 <body>
     <header></header>
     <main>
-        <div id="mainX" class="main-wrapper">
 
+
+        <div id="mainX" class="main-wrapper">
         </div>
+
     </main>
     <footer>
     </footer>
@@ -50,6 +52,7 @@
         index = 0
         while (index < keys['length']) {
             divX = document.createElement('div')
+            divX.className='row'
             mainX.appendChild(divX)
             row = keys[index]
             index2 = 0
@@ -57,6 +60,7 @@
                 kbdX = document.createElement('kbd')
                 buttonX = document.createElement('button')
                 kbdX.textContent = row[index2]
+                kbdX.className = 'key'
                 buttonX.textContent = '编辑'
                 buttonX.id = row[index2]
                 kbdX.appendChild(buttonX)
