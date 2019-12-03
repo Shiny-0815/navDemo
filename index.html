@@ -13,7 +13,7 @@
 <body>
     <header></header>
     <main>
-        <div id="mainX"  class="main-wrapper">
+        <div id="mainX" class="main-wrapper">
 
         </div>
     </main>
@@ -42,6 +42,10 @@
             'm': 'www.mcdonalds.com.cn'
         }
 
+        var hashInLocalStorage = JSON.parse(localStorage.getItem('zzz') || 'null')
+        if (hashInLocalStorage) {
+            hash = hashInLocalStorage
+        }
 
         index = 0
         while (index < keys['length']) {
@@ -49,21 +53,38 @@
             mainX.appendChild(divX)
             row = keys[index]
             index2 = 0
-            while (index2 < row.length){
+            while (index2 < row.length) {
                 kbdX = document.createElement('kbd')
+                buttonX = document.createElement('button')
                 kbdX.textContent = row[index2]
+                buttonX.textContent = '编辑'
+                buttonX.id = row[index2]
+                kbdX.appendChild(buttonX)
                 divX.appendChild(kbdX)
-                index2 = index2 +1
+                //修改点击键的网址
+                buttonX.onclick = function (ddfh) {
+                    key = ddfh.target.id //ddfh.target就是用户点击的元素
+                    //console.log(key)
+                    modify = prompt('Please input a new website')
+                    hash[key] = modify
+                    localStorage.setItem('zzz', JSON.stringify(hash))
+                    console.log(hash)
+                }
+
+
+                index2 = index2 + 1
             }
-                index = index + 1
+            index = index + 1
         }
 
-        document.onkeypress = function(ddhhd){
+
+        //点击键盘跳转到键盘所指网址页面
+        document.onkeypress = function (ddhhd) {
             key = ddhhd['key']
             //console.log(hash[key])
             website = hash[key]
             //location.href = 'http://'+ website
-            window.open('http://'+website,'_blank')
+            window.open('http://' + website, '_blank')
         }
 
     </script>
